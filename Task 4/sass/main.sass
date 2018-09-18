@@ -1,0 +1,150 @@
+@import normalize
+
+*
+	box-sizing: border-box
+
+$accent-color: #f26522
+
+
+= icons($width, $height, $x, $y) 
+	display: inline-block
+	vertical-align: middle
+	background: url('../img/sprite.png') no-repeat
+	width: $width
+	height: $height
+	background-position: $x $y
+
+.ic-logo
+	+icons(46px, 44px, 0, -44px)
+	&:hover
+		+icons(46px, 44px, 0, 0)
+
+.ic-arrow
+	+icons(7px, 10px, 0, -88px)
+
+body
+	font: 18px/21px Verdana, sans-serif
+	color: #fff
+	background: url(../img/main-bg.jpg) no-repeat	
+	background-size: cover
+
+.container
+	max-width: 1090px
+	height: 100vh
+	padding: 0 15px
+	margin: 0 auto
+
+.header
+	padding: 50px 0
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	align-items: center
+	a
+		color: #fff
+	.logo
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		&:hover //при наведении картинка и текст по-разному срабатывают, как исправить?
+			color: $accent-color
+			.ic-logo
+				+icons(46px, 44px, 0, 0)
+		&__text 
+			span
+				display: block
+				text-transform: uppercase
+				font-weight: 700
+			&--milan
+				font-size: 29px
+			&--holidays
+				margin-top: 5px
+	.header__contacts a
+		display: block
+		text-align: right
+		transition: all .5s
+		&:hover
+			text-decoration: underline
+
+.content
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	&__item
+		width: 307px
+		margin-bottom: 60px
+	//.content__title a:hover НЕ РАБОТАЕТ???
+	&__title a:hover .content__info, &__img:hover .content__info
+		bottom: 0
+	&__img
+		height: 200px
+		margin-bottom: 20px
+		position: relative
+		overflow: hidden
+		border: 5px solid $accent-color
+		border-image-source: linear-gradient(#fff, $accent-color)
+		border-image-slice: 1
+		img
+			width: 100%	
+			vertical-align: middle
+	&__info
+		padding: 15px 20px
+		position: absolute
+		bottom: -72px
+		background-color: rgba($accent-color, .8)
+		color: #fff
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+		width: 100%
+		transition: all .5s
+	&__price
+		font-size: 10px
+		span
+			display: block
+			font-size: 20px
+	.content__veiw
+		font-size: 14px
+		&::after
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			margin-left: 15px
+			width: 7px
+			height: 10px
+			background: url('../img/sprite.png') no-repeat
+			background-position: 0 -88px
+		//второй способ
+		// &::after
+		// 	content: '\203A'
+		// 	display: inline-block
+		// 	vertical-align: middle
+		// 	font-size: 20px
+		// 	margin-left: 15px
+	&__title 
+		text-align: center
+		a
+			color: #fff
+			font-weight: 400
+			&:hover
+				color: $accent-color
+
+
+.footer
+	padding-bottom: 20px
+	text-align: center
+	.copywright
+		font-size: 12px

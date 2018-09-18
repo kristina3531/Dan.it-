@@ -1,0 +1,76 @@
+@import normalize
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900')
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&subset=latin-ext')
+
+$accent-color: #16a085
+
+body
+	color: #373737
+	font: 400 16px/26px 'Roboto', sans-serif
+
+
+.container
+	max-width: 1090px
+	padding: 0 15px
+	margin: 0 auto
+
+.header
+	padding: 30px 0
+
+.nav-list
+	list-style: none
+	text-align: center
+	&__item
+		display: inline-block
+		margin: 0 35px
+	&__link
+		color: $accent-color
+		font-size: 18px
+		line-height: 18px
+		font-family: Roboto, sans-serif
+		text-transform: uppercase
+		font-weight: 700
+		letter-spacing: 2.7px
+		&:hover
+			color: darken($accent-color, 10%)
+
+.img
+	height: 790px
+	background-image: url(../img/img.jpg)
+	background-size: cover
+
+.content
+	padding: 55px 0 90px
+	background-color: #f5f6f7
+	text-align: center
+	&__title
+		color: #373737
+		font-size: 22px
+		line-height: 28px
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 1.5px
+	&__text
+		margin: 35px 0
+	&__btn
+		display: inline-block
+		padding: 20px 40px
+		background-color: $accent-color
+		border-radius: 3px
+		font-family: 'Varela Round', sans-serif
+		color: #fff
+		font-size: 12px
+		font-weight: 700
+		line-height: 12px
+		text-transform: uppercase
+		letter-spacing: 1.8px
+		&:hover
+			background-color: darken($accent-color, 10%)
+
+.footer
+	padding: 45px 0
+	.copywright
+		text-align: right
+		font-size: 16px
+		letter-spacing: 2.4px

@@ -1,0 +1,240 @@
+@import normalize
+
+
+$accent-color: #3cb878
+
+//Иконки
+
+= icons($width, $height, $x, $y) 
+	display: inline-block
+	vertical-align: middle
+	background: url('../img/sprite.png') no-repeat
+	width: $width
+	height: $height
+	background-position: $x $y
+
+.ic-forum
+	+icons(28px, 20px, 0, 0)
+	&:hover
+		+icons(28px, 20px, 0, -20px)
+
+.google
+	+icons(25px, 16px, 0, -40px)
+	
+.ic-journey
+	+icons(20px, 20px, 0, -56px)
+	&:hover
+		+icons(20px, 20px, 0, -76px)
+
+.ic-calendar
+	+icons(19px, 19px, 0, -96px)
+	&:hover
+		+icons(19px, 19px, 0, -115px)
+
+.facebook
+	+icons(10px, 20px, 0, -134px)
+
+body
+	font-size: 14px
+	font-family: Verdana, sans-serif
+
+.container
+	max-width: 1240px
+	padding: 0 15px
+	margin: 0 auto
+
+.header
+	padding: 18px 0
+	background-color: rgba(#000, .4)
+	color: #fff
+	position: fixed
+	width: 100%
+	.container
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+	&-logo
+		font-size: 20px
+		text-transform: uppercase
+		color: #fff
+		font-weight: 600
+		&:hover
+			color: $accent-color
+	&-menu
+		margin-left: auto
+		list-style: none
+		&__item
+			display: inline-block
+			margin-left: 25px
+			&:first-child
+				margin-left: 0
+	&-user
+		margin-left: 50px
+		&__link
+			color: $accent-color
+			&:hover
+				text-decoration: underline
+
+.main
+	height: 100vh
+	background: url(../img/main-bg.jpg) no-repeat center
+	background-size: cover
+	.container
+		height: 100%
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+	form
+		padding: 30px 60px
+		width: 457px
+		background-color: #fff
+		border-radius: 5px
+		position: relative
+		.form-enter
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			justify-content: space-between
+			img
+				position: absolute
+				left: 0
+
+			&__link
+				color: $accent-color
+				&:hover
+					text-decoration: underline
+				&.active
+					color: #434343
+					font-size: 20px
+					&:hover
+						text-decoration: none
+		.social
+			margin-top: 15px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: space-between
+			&-text
+		  	color: #fff
+		  	text-align: center
+		  	flex: 1
+			&-facebook, &-googlePlus
+				width: 49%
+				height: 46px
+				border-radius: 3px
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				align-items: center
+			&-facebook
+				background-color: #264b96
+			&-googlePlus
+				background-color: #c3412c
+			&-icon
+				width: 50px
+				text-align: center
+				position: relative
+				&::after
+					content: ''
+					position: absolute
+					right: 0
+					top: 50%
+					transform: translateY(-50%)
+					width: 1px
+					height: 28px
+					background-color: rgba(#000, .2)
+		// Мой новый вариант
+		// .registration
+		// 	text-align: center
+		// 	position: relative
+		// 	margin: 30px 0 15px
+		// 	&::before
+		// 		content: ''
+		// 		height: 1px
+		// 		width: 100%
+		// 		background-color: #eaeaea
+		// 		position: absolute
+		// 		top: 50%
+		// 		left: 0
+		// 	span
+		// 		display: inline-block
+		// 		padding: 0 20px
+		// 		background-color: #fff
+		// 		color: #848484
+		// 		position: relative
+		// 		z-index: 1
+
+		.registration
+			margin: 30px 0 15px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			.line
+				width: 100%
+				height: 1px
+				background-color: #eaeaea
+			.text
+				padding: 0 20px
+				color: #848484			
+		.form-control
+			margin-bottom: 9px
+			padding: 0 17px
+			display: block
+			width: 100%
+			height: 46px
+			border: 1px solid #eaeaea
+			border-radius: 3px
+			color: #434343
+			&::-webkit-input-placeholder
+				color: #bebebe
+			&:focus
+				box-shadow: 0 3px 8px rgba(0, 0, 0, 0.21)
+		#checkbox
+			display: none
+		#checkbox:checked + label::before
+			background: url(../img/checkbox.png) no-repeat center
+		label
+			a
+				color: $accent-color
+				&:hover
+					text-decoration: underline
+		label::before
+			content: ''
+			display: inline-block
+			width: 20px
+			height: 20px
+			border: 1px solid #eaeaea
+			border-radius: 3px
+			vertical-align: middle
+			margin: 20px 10px 25px 0
+		.btn
+			display: block
+			border: none
+			border-radius: 3px
+			background-color: $accent-color
+			height: 46px
+			width: 100%
+			font-size: 16px
+			color: #fff
+			cursor: pointer
+			transition: all .3s
+			&:hover
+				color: #fff
+				background-color: darken($accent-color, 10%)

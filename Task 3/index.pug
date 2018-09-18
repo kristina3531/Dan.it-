@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Journey
+		link(rel="stylesheet", href="css/main.css")
+	body
+		header.header
+			.container
+				a.header-logo(href="index.html") journey
+				ul.header-menu
+					li.header-menu__item
+						a.header-menu__link(href="#"): i.ic-calendar
+					li.header-menu__item
+						a.header-menu__link(href="#"): i.ic-forum
+					li.header-menu__item
+						a.header-menu__link(href="#"): i.ic-journey
+				.header-user Welcome,
+					a(href="#").header-user__link  Log In
+					|  or 
+					a(href="#").header-user__link Sign Up
+				
+		section.main
+			.container
+				form
+					.form-enter
+						img(src="img/sign-up.jpg", alt="Sign Up")
+						a.form-enter__link.active(href="#") Sign Up
+						a.form-enter__link(href="#") Log In
+					.social
+						a.social-facebook(href="#")
+							span.social-icon
+								i.facebook
+							span.social-text Facebook
+						a.social-googlePlus(href="#")
+							span.social-icon
+								i.google
+							span.social-text Google
+
+					//- Мой новый вариант
+					//- .registration
+					//- 	span or
+
+					.registration
+						.line
+						.text or
+						.line
+					input.form-control(type="text" placeholder="First Name")
+					input.form-control(type="text" placeholder="Last Name")
+					input.form-control(type="email" placeholder="Email")
+					input.form-control(type="password" placeholder="Choose Password")
+					input.form-control(type="password" placeholder="Confirm Password")
+					input#checkbox(type="checkbox")
+					label(for="checkbox") Agree our 
+						a(href="#") Terms &amp; Conditions
+					button.btn Create Account
